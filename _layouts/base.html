@@ -3,17 +3,28 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title></title>
-        <link rel="icon" href="" type="image/ico" />
+        <title>{{ site.title }}</title>
+        <link rel="icon" href="/assets/img/IconEhsanLogo.ico" type="image/ico" />
         <link href="/assets/css/style.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="/assets/js/sticky-sidebar.js"></script>
     </head>
     <body>
-        {% include header.html %}
         <div class="main">
             {% include content.html %}
             {% include sidebar.html %}
         </div>
+        <div style="width: 100%; height: 500px;"></div>
+        {% include header.html %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/assets/js/sticky-sidebar.js"></script>
+        <script src="/assets/js/ResizeSensor.js"></script>
+        <script type="text/javascript">
+            var stickySidebar = new StickySidebar('#sidebar', {
+                topSpacing: 80,
+                bottomSpacing: 20,
+                containerSelector: '.main',
+                innerWrapperSelector: '.sidebar-inner'
+            });
+        </script>
     </body>
 </html>

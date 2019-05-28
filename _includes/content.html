@@ -1,3 +1,16 @@
 <div class="content">
-    <div class="content-post" style="height: 200px;"></div>
+    <div class="content-post" style="height: 2000px;">
+        <a class="post-category" href="index.html">
+            <img src="/assets/img/ImageList.svg" width="27px" height="50px" style="margin-left: 7px;"/>
+            <h3 class="post-category-text">دسته ی مطلب</h3>
+        </a>
+        <a href="index.html" style="text-decoration: none;">
+            <h3 class="post-title-text" dir="auto">{{ page.title }}</h3>
+        </a>
+        <div style="text-align: center">
+            <div class="post">
+                {{ content }}
+            </div>
+        </div>
+    </div>
 </div>
