@@ -289,15 +289,20 @@ div.content-post {
     border: solid 1px #e6e6e6;
     margin-left:auto; 
     margin-right: 10px;
+    margin-bottom: 20px;
 }
 
-a.post-category {
+div.post-category-bar {
     width: 100%;
     height: 50px;
     display: flex;
     direction: rtl;
     justify-content: center;
     border-bottom: solid 1px #e6e6e6;
+}
+
+a.post-category {
+    display: flex;
     text-decoration: none;
 }
 
@@ -310,23 +315,94 @@ h3.post-category-text {
     line-height: 50px;
 }
 
+div.post-title {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+
+div.post-title-image {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100px;
+    border: solid 1px #e6e6e6;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-left: 30px;
+}
+
+div.post-title-texts {
+    width: 400px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+a.post-title-link {
+    color: #000;
+    text-decoration: none;
+}
+
+a.post-title-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 h3.post-title-text {
     font-family: 'Vazir-Bold';
     font-size: 30pt;
     font-weight:bold;
     color: #000;
     direction: rtl;
-    width: calc(100% - 80px);
-    margin: 20px auto 20px auto;
+    text-align: right;
+    margin: 0px;
 }
 
-div.post {
-    width: 100%;
-    height: auto;
+p.post-title-subtext {
     font-family: 'Vazir';
     font-size: 10.2pt;
     font-weight: normal;
     color: #717174;
     direction: rtl;
-    text-align: center;
+    text-align: justify;
+    margin: 0px;
+}
+
+div.post-splitter {
+    margin: 20px 40px 20px 40px;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+div.post {
+    height: auto;
+    font-family: 'Vazir';
+    font-size: 11pt;
+    font-weight: normal;
+    color: #000;
+    direction: rtl;
+    margin: 0px 40px 0px 40px;
+    line-height: 30px;
+}
+
+div.post-footer {
+    display: block;
+    height: auto;
+    margin: 0px 40px 0px 40px;
+}
+
+div.post-footer-parent-flex {
+    display: flex;
+}
+
+p.post-footer-text {
+    font-family: 'Vazir';
+    font-size: 10.2pt;
+    font-weight: normal;
+    color: #717174;
+    direction: rtl;
+    text-align: right;   
+    margin: 0px 0px 7px 0px;
 }

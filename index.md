@@ -1,6 +1,5 @@
 ---
 layout: base
-title: "حرف اول"
+is-index: true;
+title: یک عدد برنامه نویس!
 ---
-
-<img src="/assets/img/ImageEhsan.jpg" width="400px" height="400px"/>
