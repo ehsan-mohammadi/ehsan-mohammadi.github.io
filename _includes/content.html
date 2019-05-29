@@ -1,16 +1,152 @@
 <div class="content">
-    <div class="content-post" style="height: 2000px;">
-        <a class="post-category" href="index.html">
-            <img src="/assets/img/ImageList.svg" width="27px" height="50px" style="margin-left: 7px;"/>
-            <h3 class="post-category-text">دسته ی مطلب</h3>
-        </a>
-        <a href="index.html" style="text-decoration: none;">
-            <h3 class="post-title-text" dir="auto">{{ page.title }}</h3>
-        </a>
-        <div style="text-align: center">
-            <div class="post">
-                {{ content }}
+    {% if page.is-index == false %}
+        <div class="content-post">
+            <div class="post-category-bar">
+                <a href="" class="post-category">
+                    <img src="/assets/img/ImageList.svg" width="27px" height="50px" style="margin-left: 7px;"/>
+                    <h3 class="post-category-text">
+                        {% for category in site.data.categories %}
+                            {% if {{page.category}} == {{category.value}} %}
+                                {{ category.display-text }}
+                                {{% break %}}
+                            {% endif %}
+                        {% endfor %}
+                    </h3>
+                </a>
+            </div>
+            <div class="post-title">
+                <div class="post-title-image">
+                    <img src={{ page.title-image }} width="200px" height="200px"/>
+                </div>
+                <div class="post-title-texts">
+                    <a class="post-title-link" href={{page.url}}>
+                        <h3 class="post-title-text" dir="auto">{{ page.title }}</h3>
+                    </a>
+                    <p class="post-title-subtext">{{ page.subtitle }}</p>
+                </div>
+            </div>
+            <div class="post-splitter"></div>
+            <div style="text-align: center">
+                <div class="post">
+                    {{ page.content }}
+                </div>
+            </div>
+            <div class="post-splitter"></div>
+            <div class="post-footer">
+                <div class="post-footer-parent-flex">
+                    <img src="/assets/img/ImageWrite.svg" width="27px" height="23px" style="margin-left: 7px;"/>
+                    <p class="post-footer-text" style="flex: 1;">نوشته شده توسط من در تاریخ {{ page.post-date }}</p>
+                </div>
+                <div class="post-footer-parent-flex">
+                    <img src="/assets/img/ImageTag.svg" width="27px" height="22px" style="margin-left: 7px;"/>
+                    <p class="post-footer-text" style="flex: 1;">
+                        <span style="color: #000; font-family: Vazir-Bold; font-weight:bold;">برچسب‎ها: </span>
+                        {% for tag in page.tags %}
+                            <span><a class="sidebar-content-link" style="margin: 0px; margin-left: 5px;">{{tag}}</a></span>
+                        {% endfor %}
+                    </p>
+                </div>
+                <div class="post-footer-parent-flex">
+                    <img src="/assets/img/ImageShare.svg" width="27px" height="23px" style="margin-left: 7px;"/>
+                    <p class="post-footer-text" style="flex: 1;">
+                        <span style="color: #000; font-family: Vazir-Bold; font-weight:bold;">اشتراک گذاری: </span>
+                    </p>
+                </div>
+                <div class="post-footer-parent-flex" style="justify-content: center; margin-bottom: 20px;">
+                    <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                        <img src="/assets/img/ImageEmail.svg" width="20px" height="20px" style="margin: -2px -2px 0px 0px;"/>
+                    </a>
+                    <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                        <img src="/assets/img/ImageTwitter.svg" width="20px" height="20px" style="margin: -2px -2px 0px 0px;"/>
+                    </a>
+                    <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                        <img src="/assets/img/ImageTelegram.svg" width="20px" height="20px" style="margin: -2px -1px 0px 0px;"/>
+                    </a>
+                    <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                        <img src="/assets/img/ImageLinkedin.svg" width="20px" height="20px" style="margin: -3px -3px 0px 0px;"/>
+                    </a>
+                    <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                        <img src="/assets/img/ImageFacebook.svg" width="20px" height="20px" style="margin: -2px -3px 0px 0px;"/>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    {% else %}
+        {% for post in site.posts %}
+            <div class="content-post">
+                <div class="post-category-bar">
+                    <a href="" class="post-category">
+                        <img src="/assets/img/ImageList.svg" width="27px" height="50px" style="margin-left: 7px;"/>
+                        <h3 class="post-category-text">
+                            {% for category in site.data.categories %}
+                                {% if {{post.category}} == {{category.value}} %}
+                                    {{ category.display-text }}
+                                    {{% break %}}
+                                {% endif %}
+                            {% endfor %}
+                        </h3>
+                    </a>
+                </div>
+                <div class="post-title">
+                    <div class="post-title-image">
+                        <img src={{ post.title-image }} width="200px" height="200px"/>
+                    </div>
+                    <div class="post-title-texts">
+                        <a class="post-title-link" href={{post.url}}>
+                            <h3 class="post-title-text" dir="auto">{{ post.title }}</h3>
+                        </a>
+                        <p class="post-title-subtext">{{ post.subtitle }}</p>
+                    </div>
+                </div>
+                <div class="post-splitter"></div>
+                <div style="text-align: center">
+                    <div class="post">
+                        {{ post.content }}
+                    </div>
+                </div>
+                <div class="post-splitter"></div>
+                <div class="post-footer">
+                    <div class="post-footer-parent-flex">
+                        <img src="/assets/img/ImageWrite.svg" width="27px" height="23px" style="margin-left: 7px;"/>
+                        <p class="post-footer-text" style="flex: 1;">نوشته شده توسط من در تاریخ {{ post.post-date }}</p>
+                    </div>
+                    <div class="post-footer-parent-flex">
+                        <img src="/assets/img/ImageTag.svg" width="27px" height="22px" style="margin-left: 7px;"/>
+                        <p class="post-footer-text" style="flex: 1;">
+                            <span style="color: #000; font-family: Vazir-Bold; font-weight:bold;">برچسب‎ها: </span>
+                            {% for tag in post.tags %}
+                                <span><a class="sidebar-content-link" style="margin: 0px; margin-left: 5px;">{{tag}}</a></span>
+                            {% endfor %}
+                        </p>
+                    </div>
+                    <div class="post-footer-parent-flex">
+                        <img src="/assets/img/ImageShare.svg" width="27px" height="23px" style="margin-left: 7px;"/>
+                        <p class="post-footer-text" style="flex: 1;">
+                            <span style="color: #000; font-family: Vazir-Bold; font-weight:bold;">اشتراک گذاری: </span>
+                        </p>
+                    </div>
+                    <div class="post-footer-parent-flex" style="justify-content: center; margin-bottom: 20px;">
+                        <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                            <img src="/assets/img/ImageEmail.svg" width="20px" height="20px" style="margin: -2px -2px 0px 0px;"/>
+                        </a>
+                        <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                            <img src="/assets/img/ImageTwitter.svg" width="20px" height="20px" style="margin: -2px -2px 0px 0px;"/>
+                        </a>
+                        <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                            <img src="/assets/img/ImageTelegram.svg" width="20px" height="20px" style="margin: -2px -1px 0px 0px;"/>
+                        </a>
+                        <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                            <img src="/assets/img/ImageLinkedin.svg" width="20px" height="20px" style="margin: -3px -3px 0px 0px;"/>
+                        </a>
+                        <a class="button-circle ripple" style="width: 15px; height: 15px;">
+                            <img src="/assets/img/ImageFacebook.svg" width="20px" height="20px" style="margin: -2px -3px 0px 0px;"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+        
+    
 </div>
