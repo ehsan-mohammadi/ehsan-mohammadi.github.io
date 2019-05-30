@@ -164,6 +164,10 @@ div.sidebar {
     will-change: min-height;
 }
 
+div.sidebar-max-screen {
+    /* Has nothing */
+}
+
 div.sidebar-inner {
     transform: translate(0, 0);
     transform: translate3d(0, 0, 0);
@@ -207,6 +211,7 @@ div.sidebar-flex {
 
 a.sidebar-content-link {
     width: auto;
+    max-width: calc(100% - 82px);
     font-family: 'Vazir';
     font-size: 10.2pt;
     font-weight: normal;
@@ -223,10 +228,12 @@ a.sidebar-content-link:hover {
     cursor: pointer;
 }
 
-p.sidebar-link-circle {
-    width: 30px;
-    margin: 0px;
-    color: #3897f0;
+div.sidebar-link-circle {
+    width: 12px;
+    height: 12px;
+    margin: 6px 0px 0px 10px;
+    background-color: #3897f0;
+    border-radius: 100px;
 }
 
 p.sidebar-content-text {
@@ -245,6 +252,10 @@ h4.sidebar-title-text {
     font-weight:bold;
     margin: 0px;
     line-height: 50px;
+}
+
+div.topbar-bottombar {
+    display: none;
 }
 
 a.button-circle {
@@ -318,7 +329,7 @@ h3.post-category-text {
 div.post-title {
     display: block;
     text-align: center;
-    margin-top: 30px;
+    margin: 30px 30px 0px 30px;
 }
 
 div.post-title-image {
@@ -405,4 +416,75 @@ p.post-footer-text {
     direction: rtl;
     text-align: right;   
     margin: 0px 0px 7px 0px;
+}
+
+@media screen and (max-width: 1050px) {
+    div.sidebar {
+        width: 330px;
+    }
+
+    div.sidebar-block {
+        width: 298px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    p.header-button-text {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    div.main {
+        display: block;
+    }
+
+    div.sidebar-max-screen {
+        display: none;
+    }
+
+    div.content-post {
+        width: calc(100% - 40px);
+        margin-right: 20px;
+    }
+
+    div.topbar-bottombar {
+        width: calc(100% - 40px);
+        height: auto;
+        display: block;
+        background-color: #ffffff;
+        border: solid 1px #e6e6e6;
+        margin: 0px auto 20px auto;
+        text-align: center;
+        direction: rtl;
+    }
+
+    div.topbar-bottombar-content {
+        margin: 0px 30px 0px 30px;
+    }
+    
+    div.topbar-bottombar-summary-me-image {
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        margin: 20px auto auto auto;
+        background-image: url(/assets/img/ImageEhsan.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 100px;
+        border: solid 1px #e6e6e6;
+    }
+
+    p.topbar-bottombar-content-text {
+        display: inline-block;
+        width: 400px;
+        font-family: 'Vazir';
+        font-size: 10.2pt;
+        font-weight: normal;
+        color: #717174;
+        direction: rtl;
+        text-align: justify;
+        margin: 20px 30px 20px 0px;
+    }
 }

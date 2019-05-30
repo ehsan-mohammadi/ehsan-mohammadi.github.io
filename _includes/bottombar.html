@@ -1,0 +1,40 @@
+<div class="topbar-bottombar">
+    <div class="sidebar-title">
+        <div class="sidebar-title">
+            <img src="/assets/img/ImageFunny.svg" width="27px" height="50px" style="margin-left: 7px;"/>
+            <h4 class="sidebar-title-text">شاید براتون جالب باشه</h4>
+        </div>
+    </div>
+    <div class="topbar-bottombar-content" style="margin-top: 20px; margin-bottom: 15px;">
+        {% for funnyLink in site.data.funny-links %}
+            <div class="sidebar-flex" style="direction: rtl; margin-bottom: 5px;">   
+                <p style="width: 30px"></p>
+                <div class="sidebar-link-circle"></div>
+                <a class="sidebar-content-link" style="margin: 0px;" href={{funnyLink.link}} target="_blank">{{funnyLink.text}}</a> 
+                <p style="flex: 1;"></p>
+                <p style="width: 30px"></p>
+            </div>
+        {% endfor %}
+        <div style="margin-bottom: 15px;"></div>
+    </div>
+</div>
+<div class="topbar-bottombar">
+    <div class="sidebar-title">
+        <div class="sidebar-title">
+            <img src="/assets/img/ImageFriend.svg" width="27px" height="50px" style="margin-left: 7px;"/>
+            <h4 class="sidebar-title-text">لینک های مورد علاقه</h4>
+        </div>
+    </div>
+    <div class="topbar-bottombar-content" style="margin-top: 20px;">
+        {% for friendLink in site.data.friends-links %}
+            <div class="sidebar-flex" style="direction: rtl; margin-bottom: 5px;">   
+                <p style="width: 30px"></p>
+                <div class="sidebar-link-circle"></div>
+                <a class="sidebar-content-link" style="margin: 0px;" href={{friendLink.link}} target="_blank">{{friendLink.name}}</a> 
+                <p style="flex: 1;"></p>
+                <p style="width: 30px"></p>
+            </div>
+        {% endfor %}
+        <div style="margin-bottom: 15px;"></div>
+    </div>
+</div>

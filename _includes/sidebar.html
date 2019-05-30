@@ -1,4 +1,4 @@
-<div id="sidebar" class="sidebar">
+<div id="sidebar" class="sidebar sidebar-max-screen">
     <div class="sidebar-inner">
         <div class="sidebar-block">
             <div class="sidebar-title">
@@ -45,7 +45,7 @@
             {% for funnyLink in site.data.funny-links %}
                 <div class="sidebar-flex" style="direction: rtl; margin-bottom: 5px;">   
                     <p style="width: 30px"></p>
-                    <p class="sidebar-link-circle">⬤</p>
+                    <div class="sidebar-link-circle"></div>
                     <a class="sidebar-content-link" style="margin: 0px;" href={{funnyLink.link}} target="_blank">{{funnyLink.text}}</a> 
                     <p style="flex: 1;"></p>
                     <p style="width: 30px"></p>
@@ -62,7 +62,7 @@
             {% for friendLink in site.data.friends-links %}
                 <div class="sidebar-flex" style="direction: rtl; margin-bottom: 5px;">   
                     <p style="width: 30px"></p>
-                    <p class="sidebar-link-circle">⬤</p>
+                    <div class="sidebar-link-circle"></div>
                     <a class="sidebar-content-link" style="margin: 0px;" href={{friendLink.link}} target="_blank">{{friendLink.name}}</a> 
                     <p style="flex: 1;"></p>
                     <p style="width: 30px"></p>
