@@ -27,6 +27,38 @@
                 containerSelector: '.main',
                 innerWrapperSelector: '.sidebar-inner'
             });
+
+            window.onload = function () {
+                const btnMore = document.getElementById("btnMore");
+                const divMoreMenu = document.getElementById("divMoreMenu");
+                //const sidebar = document.getElementById("sidebar");
+                //const sidebarInner = document.getElementById("sidebarInner");
+
+                /*if($(window).resize(function () {
+                    if ($(window).width() > 870){
+                        $(sidebar).css("position", "relative");
+                        $(sidebarInner).css("position", "relative");
+                        
+                    }
+                }));*/
+
+                btnMore.addEventListener("click", toggleMoreMenu);
+                $(document).mousedown(function (e) {
+                    var moreMenuContainer = $(divMoreMenu);
+                    if (moreMenuContainer.css("opacity") == 1 && !moreMenuContainer.is(e.target) && moreMenuContainer.has(e.target).length === 0) {
+                        toggleMoreMenu();
+                    }
+                });
+
+                function toggleMoreMenu() {
+                    var opacity = $(divMoreMenu).css('opacity');
+
+                    if (opacity == 0)
+                        $(divMoreMenu).animate({ opacity: '1', top: '70px' });
+                    else if (opacity == 1)
+                        $(divMoreMenu).animate({ opacity: '0', top: '-265px' });
+                }
+            }
         </script>
     </body>
 </html>
