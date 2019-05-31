@@ -116,6 +116,37 @@ p.more-button-text {
     color:  #000;
 }
 
+div.more-menu {
+    display: none;
+}
+
+a.more-button {
+    width: auto;
+    height: 40px;
+    margin: 0px 20px 0px 20px;
+    padding: 5px 0px;
+    border-color: #3897f0;
+    display: flex;
+    direction: rtl;
+    justify-content: right;
+    transition: 0.3s;
+}
+
+a.more-button:hover {
+    height: 37px;
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+    cursor: pointer;
+}
+
+div.more-search {
+    width: auto;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    border-top: solid 1px #e6e6e6;
+}
+
 p.header-button-text {
     width: auto;
     font-family: 'Vazir';
@@ -535,6 +566,22 @@ p.post-footer-text {
     div.header-more {
         width: auto;
         display: flex;
+    }
+
+    div.more-menu {
+        top: -265px; /*70px;*/
+        left: 10px;
+        display: block;
+        position: fixed;
+        background-color: white;
+        width: 230px;
+        height: 265px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        border: solid 1px #e6e6e6;
+        text-align: center;
+        overflow-y: auto;
+        max-height: calc(100vh - 70px);
     }
 }
 
