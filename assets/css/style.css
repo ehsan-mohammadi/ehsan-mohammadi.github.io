@@ -90,9 +90,43 @@ h2.header-subtitle-text {
     margin: -10px 10px 0px 0px;
 }
 
+div.header-splitter {
+    width: 80px;
+}
+
 div.header-buttons {
     display: flex;
     flex: 1;
+}
+
+div.header-more {
+    display: none;
+}
+
+p.more-button-text {
+    width: auto;
+    font-family: 'Vazir';
+    font-size: 10pt;
+    font-weight:normal;
+    direction: rtl;
+    text-align:right;
+    vertical-align: top;
+    line-height: 45px;
+    margin: 0px 5px 0px 0px;
+    color:  #000;
+}
+
+p.header-button-text {
+    width: auto;
+    font-family: 'Vazir';
+    font-size: 10pt;
+    font-weight:normal;
+    direction: rtl;
+    text-align:right;
+    vertical-align: top;
+    line-height: 45px;
+    margin: 0px 5px 0px 0px;
+    color:  #000;
 }
 
 a.header-button {
@@ -486,5 +520,38 @@ p.post-footer-text {
         direction: rtl;
         text-align: justify;
         margin: 20px 30px 20px 0px;
+    }
+}
+
+@media screen and (max-width: 719px) {
+    div.header-buttons, div.header-search {
+        display: none;
+    }
+
+    div.header-splitter {
+        flex: 1;
+    }
+
+    div.header-more {
+        width: auto;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 684px) {
+
+
+    p.topbar-bottombar-content-text {
+        width: calc(100% - 40px);
+        margin-right: 0px;
+    }
+
+    div.post-title-texts {
+        width: calc(100% - 40px);
+    }
+
+    p.p.post-title-subtext {
+        width: calc(100% - 40px);
+        margin-left: 0px;
     }
 }
