@@ -31,16 +31,18 @@
             window.onload = function () {
                 const btnMore = document.getElementById("btnMore");
                 const divMoreMenu = document.getElementById("divMoreMenu");
-                //const sidebar = document.getElementById("sidebar");
-                //const sidebarInner = document.getElementById("sidebarInner");
 
-                /*if($(window).resize(function () {
-                    if ($(window).width() > 870){
-                        $(sidebar).css("position", "relative");
-                        $(sidebarInner).css("position", "relative");
-                        
-                    }
-                }));*/
+                if($(window).resize(function () {
+                    stickySidebar.destroy();
+                    window.scrollTo({top: 0, behavior: 'auto'});
+
+                    stickySidebar = new StickySidebar('#sidebar', {
+                        topSpacing: 80,
+                        bottomSpacing: 20,
+                        containerSelector: '.main',
+                        innerWrapperSelector: '.sidebar-inner'
+                    });
+                }));
 
                 btnMore.addEventListener("click", toggleMoreMenu);
                 $(document).mousedown(function (e) {
