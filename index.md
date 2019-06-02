@@ -1,5 +1,5 @@
 ---
 layout: base
-is-index: true;
+page-type: index
 title: یک عدد برنامه نویس!
 ---

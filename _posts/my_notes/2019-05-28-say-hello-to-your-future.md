@@ -1,6 +1,6 @@
 ---
 layout: base
-is-index: false
+page-type: post
 category: my-notes
 permalink: /:categories/:name
 title-image: "/assets/img/post-images/post-1/post-1-image-1.jpg"
