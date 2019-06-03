@@ -13,7 +13,7 @@
             <div class="content">
                 {% if page.page-type == "index" %}
                     {% for post in site.posts %}
-                        {% include content.htmL
+                        {% include content.html
                             url = post.url
                             category = post.category
                             title-image = post.title-image
@@ -27,7 +27,7 @@
                 {% elsif page.page-type == "category" %}
                     {% for post in site.posts %}
                         {% if post.category == page.category %}
-                            {% include content.htmL
+                            {% include content.html
                                 url = post.url
                                 category = post.category
                                 title-image = post.title-image
@@ -40,7 +40,7 @@
                         {% endif %}
                     {% endfor %}
                 {% elsif page.page-type == "post" %}
-                    {% include content.htmL
+                    {% include content.html
                         url = page.url
                         category = page.category
                         title-image = page.title-image
