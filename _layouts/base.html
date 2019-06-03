@@ -24,6 +24,21 @@
                             tags = post.tags
                         %}
                     {% endfor %}
+                {% elsif page.page-type == "category" %}
+                    {% for post in site.posts %}
+                        {% if post.category == page.category %}
+                            {% include content.htmL
+                                url = post.url
+                                category = post.category
+                                title-image = post.title-image
+                                title = post.title
+                                subtitle = post.subtitle
+                                content = post.content
+                                post-date = post.post-date
+                                tags = post.tags
+                            %}
+                        {% endif %}
+                    {% endfor %}
                 {% elsif page.page-type == "post" %}
                     {% include content.htmL
                         url = page.url
