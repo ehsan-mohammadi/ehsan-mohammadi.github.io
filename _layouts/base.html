@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>{{ site.title }} - {{page.title}}</title>
         <link rel="icon" href="/assets/img/IconEhsanLogo.ico" type="image/ico" />
         <link href="/assets/css/style.css" rel="stylesheet" />
@@ -24,6 +24,17 @@
                             tags = post.tags
                         %}
                     {% endfor %}
+                {% elsif page.page-type == "post" %}
+                    {% include content.html
+                        url = page.url
+                        category = page.category
+                        title-image = page.title-image
+                        title = page.title
+                        subtitle = page.subtitle
+                        content = page.content
+                        post-date = page.post-date
+                        tags = page.tags
+                    %}
                 {% elsif page.page-type == "category" %}
                     {% for post in site.posts %}
                         {% if post.category == page.category %}
@@ -39,17 +50,61 @@
                             %}
                         {% endif %}
                     {% endfor %}
-                {% elsif page.page-type == "post" %}
-                    {% include content.html
-                        url = page.url
-                        category = page.category
-                        title-image = page.title-image
-                        title = page.title
-                        subtitle = page.subtitle
-                        content = page.content
-                        post-date = page.post-date
-                        tags = page.tags
-                    %}
+                {% elsif page.page-type == "tag" %}
+                    {% for post in site.posts %}
+                        {% include content.html
+                            url = post.url
+                            category = post.category
+                            title-image = post.title-image
+                            title = post.title
+                            subtitle = post.subtitle
+                            content = post.content
+                            post-date = post.post-date
+                            tags = post.tags
+                            post-type = page.page-type
+                        %}
+                    {% endfor %}
+
+                    <script type="text/javascript">
+                        // Return value is assigned to QueryString
+                        function queryString() {
+                            var i = 0, queryObj = {}, pair;
+                            var queryStr = window.location.search.substring(1);
+                            var queryArr = queryStr.split('&');
+                            for (i = 0; i < queryArr.length; i++) {
+                                pair = queryArr[i].split('=');
+                                // If first entry with this name
+                                if (typeof queryObj[pair[0]] === 'undefined') {
+                                    queryObj[pair[0]] = pair[1];
+                                    // If second entry with this name
+                                } else if (typeof queryObj[pair[0]] === 'string') {
+                                    queryObj[pair[0]] = [queryObj[pair[0]], pair[1]];
+                                    // If third or later entry with this name
+                                } else {
+                                    queryObj[pair[0]].push(pair[1]);
+                                }
+                            }
+                            return queryObj;
+                        }
+
+                        var query = queryString(), 
+                        queryTag = query.query;
+
+                        var posts = document.querySelectorAll(".content-post");
+                        for(var i = 0; i < posts.length; i++) {
+                            var postTags = posts[i].querySelectorAll(".sidebar-content-link");
+                            var isExistTag = false;
+                            for(var j = 0; j < postTags.length; j++) {
+                                if(postTags[j].innerText == decodeURIComponent(queryTag)) {
+                                    isExistTag = true;
+                                    break;
+                                }
+                            }
+
+                            if(isExistTag)
+                                posts[i].style.display = "block";
+                        }
+                    </script>        
                 {% endif %}
             </div>
             {% include sidebar.html %}
