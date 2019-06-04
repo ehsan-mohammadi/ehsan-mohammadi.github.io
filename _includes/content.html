@@ -1,4 +1,4 @@
-<div class="content-post">
+<div class="content-post" {% if {{include.post-type}} == "tag" %} style="display: none;" {% endif %}>
     <div class="post-category-bar">
         <a href="/{{ include.category }}" class="post-category">
             <img src="/assets/img/ImageList.svg" width="27px" height="50px" style="margin-left: 7px;"/>
@@ -40,7 +40,7 @@
             <p class="post-footer-text" style="flex: 1;">
                 <span style="color: #000; font-family: Vazir-Bold; font-weight:bold;">برچسب‎ها: </span>
                 {% for tag in include.tags %}
-                    <span><a class="sidebar-content-link" style="margin: 0px; margin-left: 5px;">{{tag}}</a></span>
+                    <span><a href="/tag?query={{tag}}" class="sidebar-content-link" style="margin: 0px; margin-left: 5px;">{{tag}}</a></span>
                 {% endfor %}
             </p>
         </div>
