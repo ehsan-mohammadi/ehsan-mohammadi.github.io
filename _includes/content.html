@@ -1,6 +1,6 @@
 <div class="content-post" {% if {{include.post-type}} == "tag" %} style="display: none;" {% endif %}>
     <div class="post-category-bar">
-        <a href="/{{ include.category }}" class="post-category">
+        <a href="/categories/{{ include.category }}" class="post-category">
             <img src="/assets/img/ImageList.svg" width="27px" height="50px" style="margin-left: 7px;"/>
             <h3 class="post-category-text">
                 {% for category in site.data.categories %}

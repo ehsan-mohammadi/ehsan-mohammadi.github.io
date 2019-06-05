@@ -33,7 +33,11 @@ plugins:
 collections:
   category:
     output: true
-    permalink: /:path
+    permalink: /categories/:path
+
+  posts:
+    output: true
+    permalink: /categories/:categories/:name
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
