@@ -2,7 +2,6 @@
 layout: base
 page-type: post
 category: my-notes
-permalink: /:categories/:name
 title-image: "/assets/img/post-images/post-1/post-1-image-1.jpg"
 title: "تیتر پست"
 subtitle: "اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه..." 

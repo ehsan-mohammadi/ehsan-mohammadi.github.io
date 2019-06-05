@@ -2,7 +2,6 @@
 layout: base
 page-type: post
 category: programming
-permalink: /:categories/:name
 title-image: "https://image.dhgate.com/0x0/f2/albu/g6/M00/44/8B/rBVaR1vYjGmAfjF_AAQVmBdMf80267.jpg"
 title: "تیتر پست"
 subtitle: "اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه. اینجا یک خلاصه از متن پست نوشته میشه..." 
