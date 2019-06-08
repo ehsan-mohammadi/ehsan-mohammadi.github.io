@@ -90,6 +90,8 @@
                         var query = queryString(), 
                         queryTag = query.query;
 
+                        document.title = "{{site.title}}" +" - " + decodeURIComponent(queryTag);
+
                         var posts = document.querySelectorAll(".content-post");
                         for(var i = 0; i < posts.length; i++) {
                             var postTags = posts[i].querySelectorAll(".sidebar-content-link");
