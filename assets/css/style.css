@@ -483,6 +483,28 @@ p.post-footer-text {
     margin: 0px 0px 7px 0px;
 }
 
+div.content-result {
+    width: calc(100% - 30px);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border: solid 1px #e6e6e6;
+    margin-left:auto; 
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+h3.result-text {
+    font-family: 'Vazir-Bold';
+    font-size: 25pt;
+    font-weight:bold;
+    color: #717174;
+    direction: rtl;
+    text-align: right;
+    margin: 25px 0px 25px 0px;
+}
+
 @media screen and (max-width: 1050px) {
     div.sidebar {
         width: 330px;
