@@ -104,7 +104,55 @@
                             tags = post.tags
                             post-type = page.page-type
                         %}
-                    {% endfor %}        
+                    {% endfor %}
+                    
+                    <script src="/assets/js/query-string.js"></script>
+                    <script type="text/javascript">
+                        var query = queryString(), 
+                        querySearch = query.query;
+
+                        document.title = "{{site.title}}" +" - " + decodeURIComponent(querySearch);
+
+                        var posts = document.querySelectorAll(".content-post");
+                        for(var i = 0; i < posts.length; i++) {
+                            var postCategory = posts[i].querySelectorAll(".post-category-text").innerText;
+                            var postTitle = posts[i].querySelectorAll(".post-title-text").innerText;
+                            var postSubtitle = posts[i].querySelectorAll(".post-title-subtext").innerText;
+                            var postContent = posts[i].querySelectorAll(".post p").innerText;
+                            var postTags = posts[i].querySelectorAll(".sidebar-content-link").innerText;
+
+                            var isExistSearch = false;
+
+                            if(postCategory.test(decodeURIComponent(querySearch))
+                            || postTitle.test(decodeURIComponent(querySearch))
+                            || postSubtitle.test(decodeURIComponent(querySearch))) {
+                                isExistSearch = true;
+                                var a = "Ssdsdasdad";
+                                console.log(postCategory.test(a));
+                            }
+                            else {
+                                for(var j = 0; j < postContent.length; j++) {
+                                    if(postContent[j].innerText == decodeURIComponent(querySearch)) {
+                                        isExistSearch = true;
+                                        break;
+                                    }
+                                }
+
+                                if(!isExistSearch) {
+                                    for(var j = 0; j < postTags.length; j++) {
+                                        if(postTags[j].innerText == decodeURIComponent(querySearch)) {
+                                            isExistTag = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if(isExistSearch)
+                                posts[i].style.display = "block";
+                        }
+                    </script>
+
                 {% endif %}
             </div>
             {% include sidebar.html %}
