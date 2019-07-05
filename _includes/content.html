@@ -1,15 +1,14 @@
 <div class="content-post" {% if {{include.post-type}} == "tag" or {{include.post-type}} == "search" %} style="display: none;" {% endif %}>
     <div class="post-category-bar">
         <a href="/categories/{{ include.category }}" class="post-category">
-            <img src="/assets/img/ImageList.svg" width="27px" height="50px" style="margin-left: 7px;"/>
-            <h3 class="post-category-text">
-                {% for category in site.data.categories %}
-                    {% if {{include.category}} == {{category.value}} %}
+            {% for category in site.data.categories %}
+                {% if {{include.category}} == {{category.value}} %}
+                    <img src="/assets/img/category-images/{{ category.image }}" width="27px" height="50px" style="margin-left: 7px;"/>
+                    <h3 class="post-category-text">
                         {{ category.display-text }}
-                        {{% break %}}
-                    {% endif %}
-                {% endfor %}
-            </h3>
+                    </h3>
+                {% endif %}
+            {% endfor %}
         </a>
     </div>
     <div class="post-title">

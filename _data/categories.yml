@@ -1,5 +1,7 @@
 - value: my-notes
   display-text: نوشته های من
+  image: ImageMyNotes.svg
 
 - value: programming
   display-text: برنامه نویسی
+  image: ImageProgramming.svg
