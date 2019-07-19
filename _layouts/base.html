@@ -156,7 +156,8 @@
                             }
                         }
                     </script>
-
+                {% elsif page.page-type == "categories" %}
+                    {% include categories.html %}
                 {% endif %}
             </div>
             {% include sidebar.html %}
