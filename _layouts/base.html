@@ -114,7 +114,7 @@
                         var query = queryString(), 
                         querySearch = query.query;
 
-                        document.title = "{{site.title}}" +" - " + decodeURIComponent(querySearch);
+                        document.title = "{{site.title}}" +" - نتایج جستجو برای " + decodeURIComponent(querySearch);
                         document.querySelector(".result-text span").innerText = decodeURIComponent(querySearch);
 
                         var posts = document.querySelectorAll(".content-post");
