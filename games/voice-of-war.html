@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Voice of War - Game by Ehsan Mohammadi</title>
+    <link rel="icon" href="../images/icon.ico" type="image/ico">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Voice of War - Game by Ehsan Mohammadi</h1>
+    </div>
+    <div class="side-by-side">
+        <div class="left-side">
+            <div class="logo" style="background-image: url(../images/voice-of-war/icon.png)"></div>
+            <a href="https://b2n.ir/25575" target="_blank">
+                <input type="button" class="button ripple" style="margin-top: 20px;" value="DOWNLOAD DIRECTLY" />
+            </a>
+        </div>
+        <div class="right-side">
+            <h2 class="title">VOICE OF WAR</h2>
+            <h2 class="sub-title">
+                Are you ready to feel battle?!
+                <br />
+                OK, Let's go!
+                <br />
+                Voice of War is a multiplayer FPS shooter PC game which I made it with Unity in 2018. This is my first experience in Unity <span><a href="https://docs.unity3d.com/2017.3/Documentation/Manual/net-RPCDetails.html" target="_blank">RPC</a></span> technology. In this game we have 2 teams. ATTACKERS battle to perpetrate an act of attack while DEFENSERS try to prevent it.
+                <br />
+                Use WASD to move the player, LEFT-CLICK to SHOOT, and RIGHT-CLICK to AIM.
+            </h2>
+        </div>
+    </div>
+    <div class="scroll-thumbnails"></div>
+</body>
+</html>
+
+<script>
+    var thumbnailsCount = 5;
+
+    window.onload = function () {
+        loadThumbnail();
+    }
+
+    function loadThumbnail (index = 0)
+        {
+            if (index < thumbnailsCount) {
+                var image = document.createElement('img');
+                image.onload = loadThumbnail(++index);
+                image.src = '../images/voice-of-war/thumbnail-' + index + '.png';
+                var thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail');
+                thumbnail.appendChild(image);
+
+                var scrollThumbnails = document.getElementsByClassName('scroll-thumbnails')[0];
+                scrollThumbnails.appendChild(thumbnail);
+            }
+        }
+</script>
