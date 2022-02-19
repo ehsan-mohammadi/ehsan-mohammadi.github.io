@@ -6,7 +6,6 @@
     <title>Ribbo - Game by Ehsan Mohammadi</title>
     <link rel="icon" href="../images/icon.ico" type="image/ico">
     <link href="../styles/style.css" rel="stylesheet">
-    <script src="../scripts/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -42,17 +41,22 @@
 <script>
     var thumbnailsCount = 6;
 
-    $(document).ready(function () {
+    window.onload = function () {
         loadThumbnail();
-    });
+    }
 
     function loadThumbnail (index = 0)
     {
         if (index < thumbnailsCount) {
             var image = document.createElement('img');
             image.onload = loadThumbnail(++index);
-            var thumbnail = '<div class="thumbnail"><img src="../images/ribbo/thumbnail-' + index + '.png" /></div>';
-            $('.scroll-thumbnails').append(thumbnail);
+            image.src = '../images/ribbo/thumbnail-' + index + '.png';
+            var thumbnail = document.createElement('div');
+            thumbnail.classList.add('thumbnail');
+            thumbnail.appendChild(image);
+
+            var scrollThumbnails = document.getElementsByClassName('scroll-thumbnails')[0];
+            scrollThumbnails.appendChild(thumbnail);
         }
     }
 </script>
