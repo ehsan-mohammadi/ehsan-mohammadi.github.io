@@ -6,6 +6,7 @@
     <title>Ribbo - Game by Ehsan Mohammadi</title>
     <link rel="icon" href="../images/icon.ico" type="image/ico">
     <link href="../styles/style.css" rel="stylesheet">
+    <script src="../scripts/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div class="header">
@@ -34,25 +35,24 @@
             </h2>
         </div>
     </div>
-    <div class="scroll-thumbnails">
-        <div class="thumbnail">
-            <img src="../images/ribbo/thumbnail-6.png" />
-        </div>
-        <div class="thumbnail">
-            <img src="../images/ribbo/thumbnail-5.png" />
-        </div>
-        <div class="thumbnail">
-            <img src="../images/ribbo/thumbnail-4.png" />
-        </div>
-        <div class="thumbnail">
-            <img src="../images/ribbo/thumbnail-3.png" />
-        </div>
-        <div class="thumbnail">
-            <img src="../images/ribbo/thumbnail-2.png" />
-        </div>
-        <div class="thumbnail">
-            <img src="../images/ribbo/thumbnail-1.png" />
-        </div>
-    </div>
+    <div class="scroll-thumbnails"></div>
 </body>
 </html>
+
+<script>
+    var thumbnailsCount = 6;
+
+    $(document).ready(function () {
+        loadThumbnail();
+    });
+
+    function loadThumbnail (index = 0)
+    {
+        if (index < thumbnailsCount) {
+            var image = document.createElement('img');
+            image.onload = loadThumbnail(++index);
+            var thumbnail = '<div class="thumbnail"><img src="../images/ribbo/thumbnail-' + index + '.png" /></div>';
+            $('.scroll-thumbnails').append(thumbnail);
+        }
+    }
+</script>
