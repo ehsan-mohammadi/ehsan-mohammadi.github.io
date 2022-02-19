@@ -157,3 +157,9 @@ h2.sub-title {
     -moz-transition: background .4s;
     transition: background .4s;
 }
+
+@media screen and (max-width: 460px) {
+    div.left-side, div.right-side {
+        width: 100%;
+    }
+}
