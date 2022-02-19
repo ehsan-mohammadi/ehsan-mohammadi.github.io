@@ -65,6 +65,28 @@ div.logo {
     border-radius: 100%;
 }
 
+div.scroll-thumbnails {
+    width: 700px;
+    display: block;
+    margin: 40px auto;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.thumbnail {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    background-color: #ffffff;
+    border: solid 1px #e6e6e6;
+}
+
+div.thumbnail img {
+    width: 100%;
+}
+
 h1 {
     font-family: 'SegoeUI';
     font-size: 13pt;
@@ -127,8 +149,13 @@ h2.sub-title {
     transition: background .4s;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 720px) {
     div.left-side, div.right-side {
         width: 100%;
+    }
+
+    div.scroll-thumbnails {
+        width: auto;
+        margin: 40px;
     }
 }
