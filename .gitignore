@@ -1,0 +1,8 @@
+Web.config
+Web.Debug.config
+Web.Release.config
+ehsan-mohammadi.github.io.csproj.user
+ehsan-mohammadi.github.io.csproj
+/bin
+/obj
+/Properties
