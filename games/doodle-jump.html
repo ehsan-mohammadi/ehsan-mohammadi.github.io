@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Doodle Jump - Game by Ehsan Mohammadi</title>
+    <link rel="icon" href="../images/icon.ico" type="image/ico">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Doodle Jump - Game by Ehsan Mohammadi</h1>
+    </div>
+    <div class="side-by-side">
+        <div class="left-side">
+            <div class="logo" style="background-image: url(../images/doodle-jump/icon.png)"></div>
+            <a href="../downloads/Doodle Jump.apk" target="_blank" download>
+                <input type="button" class="button ripple" style="margin-top: 20px;" value="DOWNLOAD DIRECTLY" />
+            </a>
+            <a href="https://github.com/ehsan-mohammadi/Doodle-Jump-Unity3D-Game" target="_blank">
+                <input type="button" class="button ripple" style="margin-top: 7px;" value="VIEW ON GITHUB" />
+            </a>
+        </div>
+        <div class="right-side">
+            <h2 class="title">DOODLE JUMP</h2>
+            <h2 class="sub-title">
+                How high can you get?!
+                <br />
+                Journey up a sheet of graph paper and perpetually jump from one platform to the next. This game is insanely addictive!
+                <br />
+                This is a remake version of <span><a href="https://play.google.com/store/apps/details?id=com.lima.doodlejump&hl=en&gl=US" target="_blank">Doodle Jump</a></span>. An endless platforming Android game which I made it with Unity in 2018. I developed it during a class to teach my students "How to make a game with Unity" at Birjand University of Technology. I published my remake version source code, as a <span><a href="https://github.com/ehsan-mohammadi/Doodle-Jump-Unity3D-Game" target="_blank">public GitHub repository</a></span>.
+                <br />
+                Use mobile ACCELERATION-SENSOR to move the player in LEFT/RIGHT directions.
+            </h2>
+        </div>
+    </div>
+    <div class="scroll-thumbnails"></div>
+</body>
+</html>
+
+<script>
+    var thumbnailsCount = 1;
+
+    window.onload = function () {
+        loadThumbnail();
+    }
+
+    function loadThumbnail (index = 0)
+        {
+            if (index < thumbnailsCount) {
+                var image = document.createElement('img');
+                image.onload = loadThumbnail(++index);
+                image.src = '../images/doodle-jump/thumbnail-' + index + '.png';
+                var thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail');
+                thumbnail.appendChild(image);
+
+                var scrollThumbnails = document.getElementsByClassName('scroll-thumbnails')[0];
+                scrollThumbnails.appendChild(thumbnail);
+            }
+        }
+</script>
