@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Knife Hit (Yalda 1400) - Game by Ehsan Mohammadi</title>
+    <link rel="icon" href="../images/icon.ico" type="image/ico">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Knife Hit (Yalda 1400) - Game by Ehsan Mohammadi</h1>
+    </div>
+    <div class="side-by-side">
+        <div class="left-side">
+            <div class="logo" style="background-image: url(../images/yalda1400-knife-hit/icon.png)"></div>
+            <a href="../downloads/Ribbo.apk" target="_blank" download>
+                <input type="button" class="button ripple" style="margin-top: 20px;" value="PLAY ONLINE" />
+            </a>
+            <a href="https://www.daneshjooyar.com/landing/yalda1400/" target="_blank">
+                <input type="button" class="button ripple" style="margin-top: 7px;" value="VIEW ON DANESHJOOYAR" />
+            </a>
+        </div>
+        <div class="right-side">
+            <h2 class="title">KNIFE HIT (YALDA 1400)</h2>
+            <h2 class="sub-title">
+                Throw the knives into the melones!
+                <br />
+                Be careful to not hit the knives, target carefully and become the knife master.
+                <br />
+                Knife Hit (Yalda 1400) is a remake version of <span><a href="https://play.google.com/store/apps/details?id=com.ketchapp.knifehit&hl=en&gl=US" target="_blank">Knife Hit</a></span> which I made it with Unity WebGL for one of the Iranian e-learning websites, <span><a href="https://www.daneshjooyar.com/" target="_blank">Daneshjooyar</a></span>, in 2021. Users could play the game on the website and by getting scores they got a discount.
+                <br />
+                Just CLICK and throw the knives into the melones.
+            </h2>
+        </div>
+    </div>
+    <div class="scroll-thumbnails"></div>
+</body>
+</html>
+
+<script>
+    var thumbnailsCount = 3;
+
+    window.onload = function () {
+        loadThumbnail();
+    }
+
+    function loadThumbnail (index = 0)
+        {
+            if (index < thumbnailsCount) {
+                var image = document.createElement('img');
+                image.onload = loadThumbnail(++index);
+                image.src = '../images/yalda1400-knife-hit/thumbnail-' + index + '.png';
+                var thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail');
+                thumbnail.appendChild(image);
+
+                var scrollThumbnails = document.getElementsByClassName('scroll-thumbnails')[0];
+                scrollThumbnails.appendChild(thumbnail);
+            }
+        }
+</script>
