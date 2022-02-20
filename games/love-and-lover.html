@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Love and Lover - Game by Ehsan Mohammadi</title>
+    <link rel="icon" href="../images/icon.ico" type="image/ico">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Love and Lover - Game by Ehsan Mohammadi</h1>
+    </div>
+    <div class="side-by-side">
+        <div class="left-side">
+            <div class="logo" style="background-image: url(../images/love-and-lover/icon.png)"></div>
+            <a href="../downloads/Love and Lover.apk" target="_blank" download>
+                <input type="button" class="button ripple" style="margin-top: 20px;" value="DOWNLOAD DIRECTLY" />
+            </a>
+        </div>
+        <div class="right-side">
+            <h2 class="title">LOVE AND LOVER</h2>
+            <h2 class="sub-title">
+                When love is real, it finds a way!
+                <br />
+                Memorize the pathways, keep following your heart, no matter where it takes you!
+                <br />
+                Love and Lover is an endless puzzle Android game which I made it with Unity in 2021. I got the main idea from <span><a href="https://gamerockerr.itch.io/heartbound" target="_blank">HeartBound</a></span> game, remade, and add some features to it.
+                <br />
+                SWIPE to move the player and just MEMORIZE the patterns.
+            </h2>
+        </div>
+    </div>
+    <div class="scroll-thumbnails"></div>
+</body>
+</html>
+
+<script>
+    var thumbnailsCount = 6;
+
+    window.onload = function () {
+        loadThumbnail();
+    }
+
+    function loadThumbnail (index = 0)
+        {
+            if (index < thumbnailsCount) {
+                var image = document.createElement('img');
+                image.onload = loadThumbnail(++index);
+                image.src = '../images/love-and-lover/thumbnail-' + index + '.png';
+                var thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail');
+                thumbnail.appendChild(image);
+
+                var scrollThumbnails = document.getElementsByClassName('scroll-thumbnails')[0];
+                scrollThumbnails.appendChild(thumbnail);
+            }
+        }
+</script>

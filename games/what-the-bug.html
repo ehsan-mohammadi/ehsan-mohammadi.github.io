@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>What the Bug! - Game by Ehsan Mohammadi</title>
+    <link rel="icon" href="../images/icon.ico" type="image/ico">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>What the Bug! - Game by Ehsan Mohammadi</h1>
+    </div>
+    <div class="side-by-side">
+        <div class="left-side">
+            <div class="logo" style="background-image: url(../images/what-the-bug/icon.png)"></div>
+            <a href="../downloads/WhatTheBug-Windows-x86_64.zip" target="_blank" download>
+                <input type="button" class="button ripple" style="margin-top: 20px;" value="DOWNLOAD DIRECTLY" />
+            </a>
+            <a href="https://ehsan-mohammadi.itch.io/what-the-bug-game" target="_blank">
+                <input type="button" class="button ripple" style="margin-top: 7px;" value="VIEW ON ITCH.IO" />
+            </a>
+        </div>
+        <div class="right-side">
+            <h2 class="title">WHAT THE BUG!</h2>
+            <h2 class="sub-title">
+                Bugs are not always bad! Sometimes they can make a hard game, easier!
+                <br />
+                Help Jundo to finish the game by using bugs. Be aware of obstacles!
+                <br />
+                What the Bug! is a platforming PC/WebGL game which I made it with Unity for <span><a href="https://itch.io/jam/backtrace-gamejam-3" target="_blank">Backtrace Game Jam #3</a></span> (hosted by <span><a href="http://backtrace.io/" target="_blank">Backtrace.io</a></span>) during 48 hours in 2021. The theme of this jam is "It is not a bug" and What the Bug! could ranked 15th between 64 entries.
+                <br />
+                Use LEFT/RIGHT arrow keys to WALK, hold CTRL and LEFT/RIGHT arrow keys to RUN, and press SPACE to JUMP.
+            </h2>
+        </div>
+    </div>
+    <div class="scroll-thumbnails"></div>
+</body>
+</html>
+
+<script>
+    var thumbnailsCount = 3;
+
+    window.onload = function () {
+        loadThumbnail();
+    }
+
+    function loadThumbnail (index = 0)
+        {
+            if (index < thumbnailsCount) {
+                var image = document.createElement('img');
+                image.onload = loadThumbnail(++index);
+                image.src = '../images/what-the-bug/thumbnail-' + index + '.png';
+                var thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail');
+                thumbnail.appendChild(image);
+
+                var scrollThumbnails = document.getElementsByClassName('scroll-thumbnails')[0];
+                scrollThumbnails.appendChild(thumbnail);
+            }
+        }
+</script>
