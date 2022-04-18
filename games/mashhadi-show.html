@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Mashhadi Show - Game by Ehsan Mohammadi</title>
+    <link rel="icon" href="../images/icon.ico" type="image/ico">
+    <link href="../styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Mashhadi Show - Game by Ehsan Mohammadi</h1>
+    </div>
+    <div class="side-by-side">
+        <div class="left-side">
+            <div class="logo" style="background-image: url(../images/mashhadi-show/icon.png)"></div>
+            <a href="https://cafebazaar.ir/app/com.PoprockGames.mashhadishow" target="_blank">
+                <input type="button" class="button ripple" style="margin-top: 20px;" value="DOWNLOAD ANDROID" />
+            </a>
+            <a href="https://sibche.com/applications/mashhadi-show" target="_blank">
+                <input type="button" class="button ripple" style="margin-top: 7px;" value="DOWNLOAD iOS" />
+            </a>
+        </div>
+        <div class="right-side">
+            <h2 class="title">MASHHADI SHOW</h2>
+            <h2 class="sub-title">
+                Turn on your GPS, Find the locations and solve the puzzles! Take your time and move at your own pace. You can pause and continue anytime.
+                <br />
+                Mashhadi Show is a Real-World adventure mobile game that I made with Unity in 2022. It’s a location-based game that uses mobile GPS to locate pavilions in Mashhad city and solve puzzles.
+                <br />
+                TURN-ON GPS, grab your phone and you’re good to go. Make sure to have a fully charged battery as you need your phone to NAVIGATE.
+            </h2>
+        </div>
+    </div>
+    <div class="scroll-thumbnails"></div>
+</body>
+</html>
+
+<script>
+    var thumbnailsCount = 6;
+
+    window.onload = function () {
+        loadThumbnail();
+    }
+
+    function loadThumbnail (index = 0)
+        {
+            if (index < thumbnailsCount) {
+                var image = document.createElement('img');
+                image.onload = loadThumbnail(++index);
+                image.src = '../images/mashhadi-show/thumbnail-' + index + '.png';
+                var thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail');
+                thumbnail.appendChild(image);
+
+                var scrollThumbnails = document.getElementsByClassName('scroll-thumbnails')[0];
+                scrollThumbnails.appendChild(thumbnail);
+            }
+        }
+</script>
